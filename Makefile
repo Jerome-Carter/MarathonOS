@@ -1,5 +1,5 @@
-CC=./../opt/cross/bin/i686-elf-gcc
-AS=./../opt/cross/bin/i686-elf-as
+CC=i686-elf-gcc
+AS=i686-elf-as
 
 CFLAGS= -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 ASFLAGS= --32
@@ -14,7 +14,10 @@ ASPATH=source/asm/
 OBJPATH=binary/objects/
 
 OBJECTS=$(OBJPATH)entrypoint.o \
-	$(OBJPATH)marathon.o
+	$(OBJPATH)marathon.o \
+	$(OBJPATH)port.o \
+	$(OBJPATH)vga.o \
+	$(OBJPATH)helpers.o
 
 all: $(KERNEL_IMG)
 

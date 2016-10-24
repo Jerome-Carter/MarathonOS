@@ -4,7 +4,9 @@
 
 #include <stddef.h>
 #include <stdint.h>
+#include "headers/vga.h"
 
 void main() {
-    
+    vga_init(VGA_LIGHT_GREEN, VGA_BLACK);
+    print("Welcome to MarathonOS");
 }
