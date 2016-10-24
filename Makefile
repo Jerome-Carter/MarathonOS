@@ -21,6 +21,9 @@ OBJECTS=$(OBJPATH)entrypoint.o \
 
 all: $(KERNEL_IMG)
 
+run: $(KERNEL_IMG)
+	qemu-system-i386 -kernel binary/marathon.bin
+
 $(OBJPATH)%.o : $(CPATH)%.c
 	$(CC) -o $@ -c $< $(CFLAGS)
 
