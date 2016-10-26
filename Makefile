@@ -21,7 +21,8 @@ OBJECTS=$(OBJPATH)entrypoint.o \
 	$(OBJPATH)helpers.o \
 	$(OBJPATH)gdt.o \
 	$(OBJPATH)gdt_asm.o \
-	$(OBJPATH)idt.o
+	$(OBJPATH)idt.o \
+	$(OBJPATH)isr.o
 
 all: $(KERNEL_IMG)
 

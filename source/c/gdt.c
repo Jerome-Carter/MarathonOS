@@ -17,7 +17,7 @@ void set_gdt_gate(int32_t entry, uint32_t base, uint32_t limit, uint8_t access, 
 
 void gdt_init(){
 
-    print("INFO: Initializing IDT");
+    print("INFO: Initializing Global Descriptor Table\n");
 
     gdt_pointer.limit = (sizeof(gdt_entry_t)*5) - 1;
     gdt_pointer.base = (uint32_t)&gdt_entries;
