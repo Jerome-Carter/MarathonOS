@@ -17,4 +17,3 @@ flush_gdt:
 	ret
 
 .size flush_gdt, . - flush_gdt
-

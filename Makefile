@@ -22,12 +22,21 @@ OBJECTS=$(OBJPATH)entrypoint.o \
 	$(OBJPATH)gdt.o \
 	$(OBJPATH)gdt_asm.o \
 	$(OBJPATH)idt.o \
-	$(OBJPATH)isr.o
+    $(OBJPATH)idt_asm.o \
+    $(OBJPATH)isr.o \
+    $(OBJPATH)isr_asm.o \
+    $(OBJPATH)irq.o \
+    $(OBJPATH)irq_asm.o
+
 
 all: $(KERNEL_IMG)
 
 run: $(KERNEL_IMG)
 	qemu-system-i386 -kernel binary/marathon.bin
+
+clean:
+	rm -f binary/*.bin
+	rm -f binary/objects/*.o
 
 $(OBJPATH)%.o : $(CPATH)%.c
 	$(CC) -o $@ -c $< $(CFLAGS)

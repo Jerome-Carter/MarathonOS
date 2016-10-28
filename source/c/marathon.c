@@ -8,12 +8,14 @@
 #include "headers/gdt.h"
 #include "headers/idt.h"
 #include "headers/isr.h"
+#include "headers/irq.h"
 
 void main() {
     vga_init(VGA_LIGHT_GREEN, VGA_BLACK);
     gdt_init();
     idt_init();
     isr_init();
+    irq_init();
     print("Welcome to MarathonOS");
     int z = 5/0;
     print(z);

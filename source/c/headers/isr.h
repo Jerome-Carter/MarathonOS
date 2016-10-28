@@ -4,8 +4,6 @@
 #include "idt.h"
 #include "vga.h"
 
-void isr_init();
-
 extern void isr0 ();
 extern void isr1 ();
 extern void isr2 ();
@@ -41,6 +39,8 @@ extern void isr31 ();
 
 const char* exceptions[32];
 
-void fault_handler(int isr);
+void isr_handler(registers_t r);
 
-#endif //SUEDEOS_ISR_H
+void isr_init();
+
+#endif //ISR_H
