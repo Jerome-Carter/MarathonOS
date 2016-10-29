@@ -5,6 +5,7 @@
 #include <stddef.h>
 #include <stdint.h>
 #include "headers/vga.h"
+#include "headers/messages.h"
 #include "headers/gdt.h"
 #include "headers/idt.h"
 #include "headers/isr.h"

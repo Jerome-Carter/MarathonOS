@@ -33,9 +33,9 @@ void idt_init() {
 //    idt_set_gate(46, (uint32_t)irq14, 0x08, 0x8E);
 //    idt_set_gate(47, (uint32_t)irq15, 0x08, 0x8E);
 
-    print("INFO: Flushing Interrupt Descriptor Table\n");
+    info("Flushing Interrupt Descriptor Table");
     flush_idt(&idt_pointer);
-    print("INFO: Interrupt Descriptor Table flushed\n");
+    info("Interrupt Descriptor Table flushed");
     
     //__asm__ __volatile__("lidtl (%0)" : : "r" (&idt_pointer));
     //print("INFO: IDT Initialized\n");

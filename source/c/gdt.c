@@ -1,5 +1,4 @@
 #include "headers/gdt.h"
-#include "headers/vga.h"
 
 void set_gdt_gate(int32_t entry, uint32_t base, uint32_t limit, uint8_t access, uint8_t gran){
 
@@ -17,7 +16,7 @@ void set_gdt_gate(int32_t entry, uint32_t base, uint32_t limit, uint8_t access, 
 
 void gdt_init(){
 
-    print("INFO: Initializing Global Descriptor Table\n");
+    info("Initializing Global Descriptor Table");
 
     gdt_pointer.limit = (sizeof(gdt_entry_t)*5) - 1;
     gdt_pointer.base = (uint32_t)&gdt_entries;
@@ -42,8 +41,8 @@ void gdt_init(){
     set_gdt_gate(3, 0, 0xFFFFFFFF, 0xFA, 0xCF);
     set_gdt_gate(4, 0, 0xFFFFFFFF, 0xF2, 0xCF);
 
-    print("INFO: Flushing Global Descriptor Table\n");
+    info("Flushing Global Descriptor Table");
     flush_gdt(&gdt_pointer);
-    print("INFO: Global Descriptor Table flushed\n");
+    info("Global Descriptor Table flushed");
     
 }

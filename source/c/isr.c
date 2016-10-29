@@ -37,9 +37,7 @@ const char* exceptions[32] = {
 
 void isr_handler(registers_t regs) {
     if (regs.int_no < 32) {
-        print("\nFATAL: ");
-        print(exceptions[regs.int_no]);
-        print("\nINFO: System halted\n");
+        halt(exceptions[regs.int_no]);
         for (;;);
     }
 }
