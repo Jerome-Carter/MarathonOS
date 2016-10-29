@@ -17,4 +17,4 @@ License
 
 MIT
 
-**Free Software, Sexy as H\*ll!**
+**Free Software**
