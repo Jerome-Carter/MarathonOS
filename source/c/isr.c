@@ -1,3 +1,6 @@
+#include "headers/idt.h"
+#include "headers/vga.h"
+#include "headers/messages.h"
 #include "headers/isr.h"
 
 const char* exceptions[32] = {

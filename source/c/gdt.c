@@ -1,3 +1,5 @@
+#include "headers/vga.h"
+#include "headers/messages.h"
 #include "headers/gdt.h"
 
 void set_gdt_gate(int32_t entry, uint32_t base, uint32_t limit, uint8_t access, uint8_t gran){

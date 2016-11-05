@@ -1,9 +1,6 @@
 #ifndef ISR_H
 #define ISR_H
 
-#include "idt.h"
-#include "vga.h"
-
 extern void isr0 ();
 extern void isr1 ();
 extern void isr2 ();

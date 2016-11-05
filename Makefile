@@ -26,7 +26,8 @@ OBJECTS=$(OBJPATH)entrypoint.o \
     $(OBJPATH)isr.o \
     $(OBJPATH)isr_asm.o \
     $(OBJPATH)irq.o \
-    $(OBJPATH)irq_asm.o
+    $(OBJPATH)irq_asm.o \
+    $(OBJPATH)messages.o
 
 
 all: $(KERNEL_IMG)

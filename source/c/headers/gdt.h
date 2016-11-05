@@ -2,7 +2,6 @@
 #define GDT_H
 
 #include <stdint.h>
-#include "vga.h"
 
 struct gdt_entry_struct{
     uint16_t limit_low;

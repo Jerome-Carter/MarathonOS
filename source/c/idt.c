@@ -1,3 +1,6 @@
+#include "headers/vga.h"
+#include "headers/helpers.h"
+#include "headers/messages.h"
 #include "headers/idt.h"
 
 void idt_set_gate(uint8_t number, uint32_t base, uint16_t selector, uint8_t flags){

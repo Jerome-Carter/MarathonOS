@@ -2,8 +2,6 @@
 #define IDT_H
 
 #include <stdint.h>
-#include "vga.h"
-#include "helpers.h"
 
 typedef struct registers{
     uint32_t ds;

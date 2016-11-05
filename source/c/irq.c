@@ -1,8 +1,12 @@
+#include "headers/idt.h"
+#include "headers/vga.h"
+#include "headers/port.h"
+#include "headers/messages.h"
 #include "headers/irq.h"
 
 void* irq_routines[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
-void irq_init_handler(int irq, void* handler) {
+void irq_init_handler(int irq, void (*handler)(registers_t *regs)) {
     irq_routines[irq] = handler;
 }
 
@@ -10,7 +14,7 @@ void irq_reset_handler(int irq) {
     irq_routines[irq] = 0;
 }
 
-void irq_remap() {
+void irq_remap(void) {
     outb(0x20, 0x11);
     outb(0xA0, 0x11);
     outb(0x21, 0x20);
@@ -36,6 +40,7 @@ void irq_handler(registers_t* regs) {
 }
 
 void irq_init() {
+    irq_remap();
     idt_set_gate(32, (unsigned)irq0, 0x08, 0x8E);
     idt_set_gate(33, (unsigned)irq1, 0x08, 0x8E);
     idt_set_gate(34, (unsigned)irq2, 0x08, 0x8E);

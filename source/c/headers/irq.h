@@ -1,10 +1,6 @@
 #ifndef IRQ_H
 #define IRQ_H
 
-#include "idt.h"
-#include "vga.h"
-#include "port.h"
-
 extern void irq0 ();
 extern void irq1 ();
 extern void irq2 ();
@@ -24,7 +20,7 @@ extern void irq15 ();
 
 void* irq_routines[16];
 
-void irq_init_handler(int irq, void* handler);
+void irq_init_handler(int irq, void (*handler)(registers_t *r));
 void irq_reset_handler(int irq);
 
 void irq_remap();
